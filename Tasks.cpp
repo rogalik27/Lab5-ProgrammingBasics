@@ -172,6 +172,6 @@ int Tasks::task3main() {
 	for (int i = 0; i < MATRIX_SIZE; ++i) {
 		cout << mirroredDiagonalSqrt[i] << " ";
 	}
-    cout << "\n\n\n";
+    cout << endl;
     return 0;
 }
