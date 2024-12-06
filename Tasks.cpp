@@ -175,3 +175,41 @@ int Tasks::task3main() {
     cout << endl;
     return 0;
 }
+
+//TASK 4
+
+
+void selectionSort(int array[], int size) {
+    for (int i = 0; i < size - 1; ++i) {
+        int minIndex = i;
+        for (int j = i + 1; j < size; ++j) {
+            if (array[j] < array[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(array[i], array[minIndex]);
+    }
+}
+
+int Tasks::task4main() {
+    int array[5] = { 64, 25, 12, 22, 11 };
+    //find amount of elements in the array by getting its size in bits and dividing by 4 because an integer is 4 bit big
+	int arraySize = sizeof(array)/4;
+    cout << arraySize;
+
+    cout << "Array before sorting: " << endl;
+    for (int i = 0; i < 5; ++i) {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+
+    selectionSort(array, 5);
+
+    cout << "Array after sorting: " << endl;
+    for (int i = 0; i < 5; ++i) {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}

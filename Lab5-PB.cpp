@@ -30,7 +30,7 @@ int main()
 			break;
 		case 4:
 			cout << "\033[32mTask 4 called: \033[0m\n\n";
-			cout << "yet to be implemented!" << endl;
+			Tasks::task4main();
 			cout << "\n\033[32mTask 4 function ended.\033[0m\n\n";
 			break;
 		default:
