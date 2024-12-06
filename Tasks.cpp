@@ -40,6 +40,7 @@ int Tasks::task1main() {
     double maxVal = findMax(array, elementAmount);
     //display the values
     cout << "Sum of the minimal and maximal value of the array is " << minVal << " + " << maxVal << " = " << minVal + maxVal << endl;
+    cout << "test";
     return 0;
 }
 
