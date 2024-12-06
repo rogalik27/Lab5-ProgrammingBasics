@@ -39,3 +39,66 @@ int Tasks::task1main() {
     cout << "Sum of the minimal and maximal value of the array is " << minVal << " + " << maxVal << " = " << minVal + maxVal << endl;
     return 0;
 }
+
+//create row and column variables for possible future expansion
+const int ROWS = 3;
+const int COLS = 3;
+
+//function to fill a two dimensional array (matrix) with pseudorandom numbers
+void fillMatrix(int matrix[ROWS][COLS], int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            //put a "random" value into the array element at array[i][j]
+            matrix[i][j] = rand() % 10;
+        }
+    }
+}
+//function to multiply individual matrix elements and write the product into the corresponding position
+void multiplyMatrices(const int A[ROWS][COLS], const int B[ROWS][COLS], int C[ROWS][COLS], int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            C[i][j] = 0;
+            for (int k = 0; k < cols; ++k) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+}
+
+int Tasks::task2main() {
+//initiate 3 matrices
+    int A[ROWS][COLS];
+    int B[ROWS][COLS];
+    int C[ROWS][COLS];
+//fill matrices A and B to multiply them and write the product into C further
+    fillMatrix(A, ROWS, COLS);
+    fillMatrix(B, ROWS, COLS);
+//multiply the corresponding elements
+    multiplyMatrices(A, B, C, ROWS, COLS);
+//display multiplicand (matrix A)
+    cout << "Matrix A: " << endl;
+    for (int i = 0; i < ROWS; ++i) {
+        for (int j = 0; j < COLS; ++j) {
+            cout << A[i][j] << " ";
+        }
+        cout << endl;
+    }
+//display multiplier (matrix B)
+    cout << "Matrix B: " << endl;
+    for (int i = 0; i < ROWS; ++i) {
+        for (int j = 0; j < COLS; ++j) {
+            cout << B[i][j] << " ";
+        }
+        cout << endl;
+    }
+//display product (matrix C)
+    cout << "Multiplication result: " << endl;
+    for (int i = 0; i < ROWS; ++i) {
+        for (int j = 0; j < COLS; ++j) {
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
