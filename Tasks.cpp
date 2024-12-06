@@ -2,6 +2,9 @@
 #include <iostream>
 
 using namespace std;
+
+//TASK 1
+
 double findMin(const double array[], int size) {
     //a very big initiate number to compare the numbers in the received array and that way output the smallest found
     //wont work if number is beyond minVal (would be smart to use a minimal possible double variable size)
@@ -39,6 +42,8 @@ int Tasks::task1main() {
     cout << "Sum of the minimal and maximal value of the array is " << minVal << " + " << maxVal << " = " << minVal + maxVal << endl;
     return 0;
 }
+
+//TASK 2
 
 //create row and column variables for possible future expansion
 const int ROWS = 3;
