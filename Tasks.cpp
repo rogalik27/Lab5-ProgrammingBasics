@@ -1,4 +1,4 @@
-#include "Tasks.h"
+﻿#include "Tasks.h"
 #include <iostream>
 
 using namespace std;
@@ -107,3 +107,71 @@ int Tasks::task2main() {
     return 0;
 }
 
+//TASK 3
+
+const int MATRIX_SIZE = 4;
+
+void transformMatrix(int matrix[MATRIX_SIZE][MATRIX_SIZE]) {
+    for (int i = 0; i < MATRIX_SIZE; ++i) {
+        for (int j = 0; j < MATRIX_SIZE; ++j) {
+            if (matrix[i][j] < 0) {
+                matrix[i][j] *= matrix[i][j];
+            }
+        }
+    }
+}
+//fill an array with the square root values of diagonal elements starting from
+//top left until bottom right sides (e.g. [0][0], [1][1], [2][2], [3][3], etc)
+void createDiagonalSqrt(const int matrix[MATRIX_SIZE][MATRIX_SIZE], double diagonalSqrt[MATRIX_SIZE]) {
+    for (int i = 0; i < MATRIX_SIZE; ++i) {
+		diagonalSqrt[i] = sqrt(matrix[i][i]);
+    }
+}
+//fill an array with the square root values of diagonal elements starting from
+//top right until bottom left sides (e.g. [0][3], [1][2], [2][1], [3][0], etc)
+void createDiagonalSqrtMirrored(const int matrix[MATRIX_SIZE][MATRIX_SIZE], double mirroredDiagonalSqrt[MATRIX_SIZE]) {
+    int j = MATRIX_SIZE - 1;
+    for (int i = 0; i < MATRIX_SIZE; ++i) {
+        mirroredDiagonalSqrt[i] = sqrt(matrix[i][j]);
+        --j;
+    }
+}
+
+int Tasks::task3main() {
+    //predefine a matrix
+    int matrix[MATRIX_SIZE][MATRIX_SIZE] = {
+        { 4, -3, 2, -1},
+        { -1, 9, -6, 5},
+        { 3, -7, 16, -4},
+        { 5, -4, -3, 2}
+    };
+    //define arrays for the second step to store the square roots of diagonal elements
+    double diagonalSqrt[MATRIX_SIZE];
+    double mirroredDiagonalSqrt[MATRIX_SIZE];
+
+	//first step - all negative elements must be replaced with a number equal to the power of 2 of themselves
+	transformMatrix(matrix);
+	//display the transformed matrix
+	cout << "Transformed matrix:" << endl;
+	for (int i = 0; i < MATRIX_SIZE; ++i) {
+		for (int j = 0; j < MATRIX_SIZE; ++j) {
+			cout << matrix[i][j] << " ";
+		}
+		cout << endl;
+	}
+	//fill the previously defined arrays for diagonal elements with square roots of diagonal elements
+	createDiagonalSqrt(matrix, diagonalSqrt);
+	createDiagonalSqrtMirrored(matrix, mirroredDiagonalSqrt);
+	//display corresponding arrays
+	cout << "Square roots of diagonal elements" << endl;
+	for (int i = 0; i < MATRIX_SIZE; ++i) {
+		cout << diagonalSqrt[i] << " ";
+	}
+	cout << endl;
+	cout << "Square roots of mirrored diagonal elements" << endl;
+	for (int i = 0; i < MATRIX_SIZE; ++i) {
+		cout << mirroredDiagonalSqrt[i] << " ";
+	}
+    cout << "\n\n\n";
+    return 0;
+}

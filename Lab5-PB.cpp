@@ -3,5 +3,5 @@
 
 int main()
 {
-	Tasks::task2main();
+	Tasks::task3main();
 }
