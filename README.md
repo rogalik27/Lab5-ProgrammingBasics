@@ -1,4 +1,4 @@
-# Лабораторна робота №4
+# Лабораторна робота №5
 * В файлі [Lab5-PB.cpp](https://github.com/rogalik27/Lab5-ProgrammingBasics/blob/master/Lab5-PB.cpp) знаходиться Front end код Лабораторної роботи №5 з Основ програмування.  
 (**PB** - **P**rogramming **B**asics)  
 * В файлі [Tasks.cpp](https://github.com/rogalik27/Lab5-ProgrammingBasics/blob/master/Tasks.cpp) знаходться Back end код Лабораторної роботи.  
