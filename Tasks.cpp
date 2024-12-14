@@ -1,5 +1,6 @@
 ﻿#include "Tasks.h"
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -195,8 +196,7 @@ int Tasks::task4main() {
     int array[5] = { 64, 25, 12, 22, 11 };
     //find amount of elements in the array by getting its size in bits and dividing by 4 because an integer is 4 bit big
 	int arraySize = sizeof(array)/4;
-    cout << arraySize;
-
+    
     cout << "Array before sorting: " << endl;
     for (int i = 0; i < 5; ++i) {
         cout << array[i] << " ";

@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "Tasks.h"
+#include "cstdlib"
 
 using namespace std;
 
@@ -32,6 +33,9 @@ int main()
 			cout << "\033[32mTask 4 called: \033[0m\n\n";
 			Tasks::task4main();
 			cout << "\n\033[32mTask 4 function ended.\033[0m\n\n";
+			break;
+		case 5:
+			cout << "github test";
 			break;
 		default:
 			cout << "\033[31mInvalid input.\033[0m Try again!" << endl;
